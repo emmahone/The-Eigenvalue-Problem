@@ -61,3 +61,77 @@ for i in range(len(eigenvalues)):
     print("Ax_{}: ".format(i+1), ax_i)
     print("Are they equal? ", np.allclose(lmbd_x_i, ax_i))
 ```
+
+Eigenvalues and eigenvectors are fundamental concepts in linear algebra that are used in various mathematical and scientific applications, including physics, computer graphics, and machine learning. They are associated with square matrices.
+
+**Eigenvalues:**
+Eigenvalues are scalars (numbers) that represent how a linear transformation (represented by a square matrix) scales or stretches space along particular directions. In simpler terms, they indicate how the matrix affects the magnitude of vectors in different directions.
+
+To find the eigenvalues of a square matrix A, you solve the characteristic equation:
+
+det(A - λI) = 0
+
+Where:
+- det(A - λI) is the determinant of the matrix A minus λ times the identity matrix I.
+- λ (lambda) represents the eigenvalue you want to find.
+
+Solving this equation for λ will give you the eigenvalues of the matrix. Each eigenvalue corresponds to a specific eigenvector.
+
+**Eigenvectors:**
+Eigenvectors are non-zero vectors that, when multiplied by a square matrix, result in a scaled version of themselves. In other words, an eigenvector v and its corresponding eigenvalue λ satisfy the equation:
+
+Av = λv
+
+Where:
+- A is the square matrix.
+- v is the eigenvector.
+- λ (lambda) is the corresponding eigenvalue.
+
+Eigenvectors tell us the directions in which the matrix only scales vectors without changing their direction. They are often normalized to have a length of 1 for convenience.
+
+**Example:**
+
+Let's take a simple 2x2 matrix as an example:
+
+A = | 2  1 |
+    | 1  3 |
+
+1. Calculate Eigenvalues:
+To find the eigenvalues, we solve the characteristic equation:
+
+det(A - λI) = 0
+
+For our matrix A:
+
+| 2-λ  1   |
+| 1    3-λ |
+
+The determinant of A - λI is:
+
+det(A - λI) = (2-λ)(3-λ) - 1 = λ^2 - 5λ + 5
+
+Now, we set this equation equal to zero and solve for λ:
+
+λ^2 - 5λ + 5 = 0
+
+Using the quadratic formula, we find the eigenvalues:
+
+λ = (5 ± √5) / 2
+
+So, the eigenvalues for matrix A are (5 + √5)/2 and (5 - √5)/2.
+
+2. Calculate Eigenvectors:
+To find the eigenvectors corresponding to each eigenvalue, we plug each eigenvalue back into the equation Av = λv and solve for v.
+
+For λ = (5 + √5)/2:
+(2-λ)v1 + v2 = 0
+v1 + (3-λ)v2 = 0
+
+Substituting the value of λ, we get a system of equations:
+
+(2 - (5 + √5)/2)v1 + v2 = 0
+v1 + (3 - (5 + √5)/2)v2 = 0
+
+Solving this system will yield the eigenvector for this eigenvalue. Similarly, you can find the eigenvector for λ = (5 - √5)/2.
+
+Eigenvectors for a matrix depend on its eigenvalues and are unique up to scaling (i.e., you can multiply an eigenvector by a constant, and it's still an eigenvector).
